@@ -38,12 +38,30 @@ function Customizer() {
           readFile={readFile}
         />
       case "aipicker":
-        return <AIPicker />
+        return <AIPicker
+        prompt={prompt}
+        setPrompt={setPrompt}
+        generatingImg={generatingImg}
+        handleSubmit={handleSubmit}
+        />
       default:
         return null;
     }
   }
 
+  // submit
+  const handleSubmit = async (type) =>{
+    if(!prompt) return alert("Please enter a prompt");
+
+    try{
+      // 
+    }catch(error){
+      alert(error)
+    }finally{
+      setGeneratingImg(false)
+      setActiveEditorTab("")
+    }
+  }
 
   const handleDecals = (type, result) => {
     const decalType = DecalTypes[type];
