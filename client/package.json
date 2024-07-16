@@ -12,8 +12,10 @@
   "dependencies": {
     "@react-three/drei": "^9.108.4",
     "@react-three/fiber": "^8.16.8",
+    "autoprefixer": "^10.4.19",
     "framer-motion": "^11.3.2",
     "maath": "^0.10.8",
+    "postcss": "^8.4.39",
     "react": "^18.3.1",
     "react-color": "^2.19.3",
     "react-dom": "^18.3.1",
