@@ -1,20 +1,16 @@
 import express from 'express';
-import * as dotenv from 'dotenv';
 import cors from 'cors';
-
-import dalleRoutes from './routes/dalle.routes.js';
-
-dotenv.config();
+import huggingfaceRoutes from './routes/routes.js'; // Use the correct path and filename
 
 const app = express();
-app.use(cors());
-app.use(express.json({ limig: "50mb" }))
 
-app.use("/api/v1/dalle", dalleRoutes);
+app.use(cors()); // Enable CORS if necessary
+app.use(express.json()); // For parsing application/json
 
-app.get('/', (req, res) => {
-    res.status(200).json({ message: "Hello from DALL.E" })
-  })
+// Use the /api/v1 route prefix for all routes in huggingfaceRoutes
+app.use('/api/v1/huggingface', huggingfaceRoutes);
 
-  app.listen(8080, () => console.log('Server has started on port 8080'))
-
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
