@@ -12,7 +12,7 @@ async function query(data) {
       "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev",
       {
         headers: {
-          Authorization: `Bearer ${process.env.HF_API_KEY}`, // Use your actual API key
+          Authorization: `Bearer ${process.env.HF_API_KEY}`, 
           "Content-Type": "application/json",
         },
         method: "POST",
